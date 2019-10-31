@@ -66,5 +66,8 @@ Save and then reboot:
 </pre>
 <p class="p1"><span class="s1">Now you’re up and running! </span></p>
 <p class="p1"><img class="aligncenter wp-image-26300 size-large" src="https://github.com/retrorich75/commonfiles/blob/master/PumkinPIBlink!.png" alt="Halloween Pumpkin AFTER" width="500" height="500" /></p>
-<p class="p1"><span class="s1">To add more of a spread to the light effect, You can created a diffuser to cover the Blinkt! LEDs. In this video (https://www.youtube.com/watch?v=YrlezeYjdu0), you’ll see https://github.com/AlexJrassic used a tissue. Not recommend for prolonged use, due to the unit getting a little warm; NOT responsible for any subsequent tissue fires. https://github.com/AlexJrassic suggests using a semi-opaque bowl (the ones you get a Christmas pudding in) or a piece of plastic from a drinks bottle, and go to town on it with some fine sandpaper.</span></p>
+
+Video of my Pumpkin Pi in action ->>>https://youtu.be/4FFzHaYx7Z8
+
+<p class="p1"><span class="s1">Some extra tips; To add more of a spread to the light effect, You can created a diffuser to cover the Blinkt! LEDs. In this video (https://www.youtube.com/watch?v=YrlezeYjdu0), you’ll see https://github.com/AlexJrassic used a tissue. Not recommend for prolonged use, due to the unit getting a little warm; <b>NOT</b> responsible for any subsequent tissue fires. https://github.com/AlexJrassic suggests using a semi-opaque bowl (the ones you get a Christmas pudding in) or a piece of plastic from a drinks bottle, and go to town on it with some fine sandpaper.</span></p>
 <p class="p1">I used a battery pack for power, but you could use a lead directly into the mains. With a larger pumpkin, you could put a battery pack inside with the Pi, like I could.</p>
