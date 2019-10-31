@@ -36,15 +36,15 @@ Replace XX with your country code, it is a two letter like, GB for the UK, US fo
 
 Copy this to the Boot drive of the sd card, Tip it's the drive with start.elf, bootcode.bin, etc
 
-Next create a blank file and save as <pre>ssh</pre> and save again to the Boot drive of the sd card.
+Next create a blank file and save as <pre>ssh</pre> Save this file again to the Boot drive of the sd card.
 
 Hopefully with all this you can plug in the Pi, after a while the green LED will stop flashing.
 
 If all went well, you will be able to SSH into the device from a computer, Putty for Windows/Linux or native on a mac.
 
-All good, if the above seems too hard, maybe download the Desktop version of Raspbian, you can switch it to boot to the CLI after you've confugure the Wifi and SSH options.
+<B>BTW</B> All good, if the above seems too hard, maybe download the full Desktop version of Raspbian, you can switch it to boot to the CLI after you've configure the Wifi and SSH options.
 
- <p class="p1"><span class="s1">In the terminal, you’ll need to install <a href="https://learn.pimoroni.com/tutorial/sandyj/getting-started-with-blinkt">the Pimoroni Blinkt! library</a>. Use the following to achieve this:</span></p>
+<p class="p1"><span class="s1">In the terminal, you’ll need to install <a href="https://learn.pimoroni.com/tutorial/sandyj/getting-started-with-blinkt">the Pimoroni Blinkt! library</a>. Use the following to achieve this:</span></p>
 
 <pre>curl -sS get.pimoroni.com/blinkt | bash</pre>
 You'll need to reboot the Raspberry Pi to allow the changes to take effect. You can do this by typing:
