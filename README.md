@@ -1,4 +1,4 @@
-# fire-effect
+# fire-effect for Pimoroni Blink!
 
 # Adapted from https://github.com/AlexJrassic/fire_effect
 
