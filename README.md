@@ -54,7 +54,7 @@ You'll need to reboot the Raspberry Pi to allow the changes to take effect. You 
 
 <pre>git clone https://github.com/AlexJrassic/fire_effect.git</pre>
 This will bring the code to your Raspberry Pi from GitHub. Next, we need to tell the Raspberry Pi to automatically start the fire_effect.py code when you power up. To do this, type:
-<pre>sudo crontab -e/pre>
+<pre>sudo crontab -e</pre>
 <pre>choose nano</pre>
 At end of the file, add this line:
 <pre>@reboot sudo python /home/pi/fire_effect/fire_effect.py @</pre>
