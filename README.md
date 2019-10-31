@@ -3,13 +3,48 @@ A fire effect for your Halloween pumpkin using a Pimoroni Blinkt!
 If you’d like to create your own pumpkin light effect, you'll need:
 <ul>
  	<li>A Raspberry Pi (Make sure you use one that fits in your pumpkin!)</li>
+  <li>A SD or microSD card for the OS
  	<li><a href="https://shop.pimoroni.com/products/blinkt">A Pimoroni Blinkt!</a></li>
- 	<li>A power supply (plus monitor, mouse, and keyboard for setup)</li>
+ 	<li>A power supply (plus monitor, mouse, and keyboard for setup, Wifi dongle & adapter (for Zero < W))</li>
  	<li>A pumpkin</li>
 </ul>
-<p class="p1"><span class="s1">Take your Blinkt! and attach it to your Pi. If you’re using a 1-3 model, this will be easy enough, but make sure the Pi fits in your pumpkin! If, like me, you need to go smaller, you’ll have to solder your header pins to a Zero before attaching the HAT.</span></p>
-<p class="p1"><span class="s1">You might want to make sure Raspbian is running on the newest version. Why? Well, why not? You don’t have to upgrade to <a href="https://www.raspberrypi.org/blog/introducing-pixel/">PIXEL,</a> but you totally should as it’s very pretty. Its creator, <a href="https://twitter.com/simonlong_rpi">Simon Long</a>, was my soldering master for this project. His skills are second to none. To upgrade to Pixel, follow the steps <a href="https://www.raspberrypi.org/blog/introducing-pixel/">here</a>.</span></p>
-<p class="p1"><span class="s1">In the terminal, you’ll need to install <a href="https://learn.pimoroni.com/tutorial/sandyj/getting-started-with-blinkt">the Pimoroni Blinkt! library</a>. Use the following to achieve this:</span></p>
+<p class="p1"><span class="s1">Take your Blinkt! and attach it to your Pi. If you’re using a 1-3-4 model, this will be easy enough, but make sure the Pi fits in your pumpkin!
+
+If, like me, you need/want to go smaller, you might need to solder your header pins to a Zero or Zero W or get alternatively get a Zero WH  which already has the header attached.  Next then attach the Blink! to Pi.</span></p>
+
+Download Raspbian from here https://www.raspberrypi.org/downloads/raspbian/ as we are going to run headless you only need the lite version
+
+NB If your using a Zero pre W then you'll need to add your Wifi dongle using a <a href="https://shop.pimoroni.com/products/usb-to-microusb-otg-converter-shim"> shim</a> or <a href="https://shop.pimoroni.com/products/usb-to-micro-usb-a-adapter"> micro USB to Type F USB</a>
+
+To pre-config wifi you can create a file on a computer called
+
+<pre>wpa_supplicant.conf</pre>
+
+If you have file extensions hidden it may show as a text file. Edit as required, from the sample below
+
+<pre>country=XX
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+
+network={
+    scan_ssid=1
+    ssid="Your Wifi Name"
+    psk="Your Wifi's Password"
+}</pre>
+
+Replace XX with your country code, it is a two letter like, GB for the UK, US for the United States, FR for France, BE for Belgium, etc.  Search the net if you don't know yours.  Also make sure you put your Wifi name and password, always include quote marks.
+
+Copy this to the Boot drive of the sd card, Tip it's the drive with start.elf, bootcode.bin, etc
+
+Next create a blank file and save as <pre>ssh</pre> and save again to the Boot drive of the sd card.
+
+Hopefully with all this you can plug in the Pi, after a while the green LED will stop flashing.
+
+If all went well, you will be able to SSH into the device from a computer, Putty for Windows/Linux or native on a mac.
+
+All good, if the above seems too hard, maybe download the Desktop version of Raspbian, you can switch it to boot to the CLI after you've confugure the Wifi and SSH options.
+
+ <p class="p1"><span class="s1">In the terminal, you’ll need to install <a href="https://learn.pimoroni.com/tutorial/sandyj/getting-started-with-blinkt">the Pimoroni Blinkt! library</a>. Use the following to achieve this:</span></p>
 
 <pre>curl -sS get.pimoroni.com/blinkt | bash</pre>
 You'll need to reboot the Raspberry Pi to allow the changes to take effect. You can do this by typing:
@@ -19,9 +54,10 @@ You'll need to reboot the Raspberry Pi to allow the changes to take effect. You 
 
 <pre>git clone https://github.com/AlexJrassic/fire_effect.git</pre>
 This will bring the code to your Raspberry Pi from GitHub. Next, we need to tell the Raspberry Pi to automatically start the fire_effect.py code when you power up. To do this, type:
-<pre>nano ~/.config/lxsession/LXDE-pi/autostart</pre>
+<pre>sudo crontab -e/pre>
+<pre>choose nano</pre>
 At end of the file, add this line:
-<pre>@python /home/pi/fire_effect/fire_effect.py</pre>
+<pre>@reboot sudo python /home/pi/fire_effect/fire_effect.py @</pre>
 Save and then reboot:
 <pre>sudo reboot
 </pre>
